@@ -1,0 +1,74 @@
+{
+  "build": {
+    "beforeDevCommand": "npm --prefix ui run dev",
+    "beforeBuildCommand": "npm --prefix ui run build",
+    "devPath": "http://localhost:5173",
+    "distDir": "../ui/dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "PhotoVault",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "binaries/photovault-engine",
+            "sidecar": true,
+            "args": true
+          }
+        ]
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"]
+      },
+      "dialog": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": ["nsis"],
+      "identifier": "com.photovault.desktop",
+      "publisher": "PhotoVault Team",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.ico"
+      ],
+      "resources": [
+        "binaries/_internal/**/*"
+      ],
+      "externalBin": [
+        "binaries/photovault-engine"
+      ],
+      "windows": {
+        "nsis": {
+          "installMode": "currentUser",
+          "displayLanguageSelector": false
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "title": "PhotoVault",
+        "width": 1200,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ]
+  }
+}

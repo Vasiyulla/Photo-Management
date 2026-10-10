@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.venv/
+venv/
+ENV/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# PyInstaller / Build Artifacts
+build/
+dist/
+*.manifest
+*.spec.bak
+
+# Local Database & Vector Indexes (Offline private data)
+vault.db*
+*.db
+*.db-journal
+*.db-wal
+*.index
+face_store/
+clip_store/
+
+# Downloaded ML Models (Downloaded locally at setup time)
+models/
+
+# Tauri & Rust Build Output
+src-tauri/target/
+src-tauri/binaries/
+installer/
+
+# Node / UI
+node_modules/
+ui/node_modules/
+ui/dist/
+*.tsbuildinfo
+
+# Scratch & Temporary Testing Files
+scratch/
+backups/
+*.log
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

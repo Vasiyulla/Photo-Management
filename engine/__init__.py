@@ -1,0 +1,1 @@
+# PhotoVault — Python core engine
